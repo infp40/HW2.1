@@ -8,12 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var pushMeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        textLabel.isHidden = true
+        pushMeButton.layer.cornerRadius = 15
     }
-
-
+    
+    @IBAction func tappedButtonPushMe(_ sender: Any) {
+        if textLabel.isHidden == true {
+            textLabel.isHidden = false
+            pushMeButton.setTitle("Еще раз!", for: .normal)
+        } else {
+            textLabel.isHidden = true
+            pushMeButton.setTitle("Нажми меня, Срочно!", for: .normal)
+        }
+    }
 }
-
