@@ -12,12 +12,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var pushMeButton: UIButton!
     @IBOutlet weak var segmentetControl: UISegmentedControl!
     @IBOutlet weak var viewBackGround: UIView!
+    @IBOutlet weak var resetButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textLabel.isHidden = true
         pushMeButton.layer.cornerRadius = 15
+        resetButton.layer.cornerRadius = 15
         viewBackGround.backgroundColor = .systemPink
+        resetButton.isHidden = true
     }
     
     @IBAction func tappedButtonPushMe(_ sender: Any) {
@@ -28,14 +31,32 @@ class ViewController: UIViewController {
             textLabel.isHidden = true
             pushMeButton.setTitle("Нажми меня, Срочно!", for: .normal)
         }
+        if textLabel.isHidden != true || viewBackGround.backgroundColor != .systemPink {
+            resetButton.isHidden = false
+        } else {
+            resetButton.isHidden = true
+        }
     }
     @IBAction func changedSegmentetControl(_ sender: Any) {
         if segmentetControl.selectedSegmentIndex == 0 {
             viewBackGround.backgroundColor = .gray
         } else if segmentetControl.selectedSegmentIndex == 1 {
             viewBackGround.backgroundColor = .yellow
-        } else {
+        } else if segmentetControl.selectedSegmentIndex == 2 {
             viewBackGround.backgroundColor = .green
+        } else {
+            viewBackGround.backgroundColor = .systemPink
         }
+        if textLabel.isHidden != true || viewBackGround.backgroundColor != .systemPink {
+            resetButton.isHidden = false
+        } else {
+            resetButton.isHidden = true
+        }
+    }
+    @IBAction func clearedButton(_ sender: Any) {
+        textLabel.isHidden = true
+        resetButton.isHidden = true
+        pushMeButton.setTitle("Нажми меня, Срочно!", for: .normal)
+        viewBackGround.backgroundColor = .systemPink
     }
 }
