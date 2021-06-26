@@ -10,11 +10,14 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var pushMeButton: UIButton!
+    @IBOutlet weak var segmentetControl: UISegmentedControl!
+    @IBOutlet weak var viewBackGround: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textLabel.isHidden = true
         pushMeButton.layer.cornerRadius = 15
+        viewBackGround.backgroundColor = .systemPink
     }
     
     @IBAction func tappedButtonPushMe(_ sender: Any) {
@@ -24,6 +27,15 @@ class ViewController: UIViewController {
         } else {
             textLabel.isHidden = true
             pushMeButton.setTitle("Нажми меня, Срочно!", for: .normal)
+        }
+    }
+    @IBAction func changedSegmentetControl(_ sender: Any) {
+        if segmentetControl.selectedSegmentIndex == 0 {
+            viewBackGround.backgroundColor = .gray
+        } else if segmentetControl.selectedSegmentIndex == 1 {
+            viewBackGround.backgroundColor = .yellow
+        } else {
+            viewBackGround.backgroundColor = .green
         }
     }
 }

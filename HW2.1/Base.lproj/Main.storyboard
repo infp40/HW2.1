@@ -17,6 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lkg-HX-H0b">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здрасти Вам! Я первое приложение этого человека. Пока я больше ничего не умею, но скоро очень быстро наверстаю!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lu5-V8-Lzn">
                                 <rect key="frame" x="30" y="74" width="354" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -36,20 +41,37 @@
                                     <action selector="tappedButtonPushMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="voh-KY-X3n"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="e4Y-1A-DS2">
+                                <rect key="frame" x="93.5" y="260" width="227" height="32"/>
+                                <segments>
+                                    <segment title="Серый"/>
+                                    <segment title="Желтый"/>
+                                    <segment title="Зеленый"/>
+                                </segments>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                <connections>
+                                    <action selector="changedSegmentetControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="KUj-QX-WT6"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lu5-V8-Lzn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="4hx-Ij-rII"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RFT-HV-B54" secondAttribute="bottom" constant="150" id="TG7-eo-aat"/>
+                            <constraint firstItem="e4Y-1A-DS2" firstAttribute="top" secondItem="lu5-V8-Lzn" secondAttribute="bottom" constant="125" id="Wtq-4I-Pdi"/>
                             <constraint firstItem="lu5-V8-Lzn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="ZwL-cf-5Ii"/>
+                            <constraint firstItem="e4Y-1A-DS2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.548309" id="f5M-c9-qBL"/>
                             <constraint firstItem="RFT-HV-B54" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fW6-lg-Obx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lu5-V8-Lzn" secondAttribute="trailing" constant="30" id="gLJ-ge-DPS"/>
+                            <constraint firstItem="e4Y-1A-DS2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sdY-wt-DkU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pushMeButton" destination="RFT-HV-B54" id="60p-QP-kqp"/>
+                        <outlet property="segmentetControl" destination="e4Y-1A-DS2" id="pMT-er-3ve"/>
                         <outlet property="textLabel" destination="lu5-V8-Lzn" id="YIE-xA-43u"/>
+                        <outlet property="viewBackGround" destination="lkg-HX-H0b" id="g4N-Nx-Jco"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -61,6 +83,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
